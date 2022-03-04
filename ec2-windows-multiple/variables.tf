@@ -1,3 +1,3 @@
 variable "vm_names" {
-  type = list
+  type = list(any)
 }
