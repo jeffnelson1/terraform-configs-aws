@@ -4,7 +4,7 @@ resource "aws_fms_policy" "wafv2_main_rules" {
   remediation_enabled   = false
   resource_type         = "AWS::ElasticLoadBalancingV2::LoadBalancer"
 
-   exclude_map {
+  exclude_map {
     account = ["00000000000"]
   }
 
@@ -14,29 +14,29 @@ resource "aws_fms_policy" "wafv2_main_rules" {
     managed_service_data = jsonencode({
       type = "WAFV2",
       preProcessRuleGroups = [
-          {
-            "managedRuleGroupIdentifier" : {
-              "vendorName" : "AWS",
-              "managedRuleGroupName" : "AWSManagedRulesLinuxRuleSet",
-              "version" : null
-            },
-            "overrideAction" : { "type" : "NONE" },
-            "ruleGroupArn" : null,
-            "excludeRules" : [],
-            "ruleGroupType" : "ManagedRuleGroup"
+        {
+          "managedRuleGroupIdentifier" : {
+            "vendorName" : "AWS",
+            "managedRuleGroupName" : "AWSManagedRulesLinuxRuleSet",
+            "version" : null
           },
-                    {
-            "managedRuleGroupIdentifier" : {
-              "vendorName" : "AWS",
-              "managedRuleGroupName" : "AWSManagedRulesAdminProtectionRuleSet",
-              "version" : null
-            },
-            "overrideAction" : { "type" : "NONE" },
-            "ruleGroupArn" : null,
-            "excludeRules" : [],
-            "ruleGroupType" : "ManagedRuleGroup"
-          }
-        ]
+          "overrideAction" : { "type" : "NONE" },
+          "ruleGroupArn" : null,
+          "excludeRules" : [],
+          "ruleGroupType" : "ManagedRuleGroup"
+        },
+        {
+          "managedRuleGroupIdentifier" : {
+            "vendorName" : "AWS",
+            "managedRuleGroupName" : "AWSManagedRulesAdminProtectionRuleSet",
+            "version" : null
+          },
+          "overrideAction" : { "type" : "NONE" },
+          "ruleGroupArn" : null,
+          "excludeRules" : [],
+          "ruleGroupType" : "ManagedRuleGroup"
+        }
+      ]
       defaultAction = {
         type = "ALLOW"
       }

@@ -37,7 +37,7 @@ data "aws_iam_policy_document" "rds_key_policy" {
   }
 }
 
-resource "aws_kms_key" "ds_key" {
+resource "aws_kms_key" "rds_key" {
   description         = var.rds_key_desc
   enable_key_rotation = true
   multi_region        = true

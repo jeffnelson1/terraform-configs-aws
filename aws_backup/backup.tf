@@ -76,12 +76,12 @@ resource "aws_backup_selection" "prod" {
   plan_id      = aws_backup_plan.plan.id
   resources    = ["arn:aws:ec2:*:*:instance/*"]
 
-    condition {
+  condition {
     string_equals {
       key   = "aws:ResourceTag/Environment"
       value = "prod"
     }
-    }
+  }
 }
 
 ## Adhoc Backup Resources
