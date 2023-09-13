@@ -1,4 +1,4 @@
-# EC2 Windows-Multiple Terraform Config
+# Redis and RDS TF Config
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
