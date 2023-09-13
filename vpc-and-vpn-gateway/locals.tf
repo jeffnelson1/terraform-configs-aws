@@ -5,9 +5,9 @@ locals {
   azs                     = ["${local.region}a", "${local.region}b", "${local.region}c"]
 
   ## VPN Locals
-  vpn_gateway_name        = "vpn-gw-prod"
-  vpn_connection_name     = "vpn-conn-prod"
-  customer_gateway_name   = "cust-gw-prod-ip1"
+  vpn_gateway_name      = "vpn-gw-prod"
+  vpn_connection_name   = "vpn-conn-prod"
+  customer_gateway_name = "cust-gw-prod-ip1"
 
   ## Tags
   tags = {

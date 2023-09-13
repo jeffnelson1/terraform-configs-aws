@@ -9,8 +9,8 @@ module "vpn_gateway" {
   remote_ipv4_network_cidr                  = "10.20.0.0/21"
   vpn_connection_static_routes_only         = true
   vpn_connection_static_routes_destinations = ["10.20.0.0/16"]
-  tunnel1_ike_versions = ["ikev2"]
-  tunnel2_ike_versions = ["ikev2"]
+  tunnel1_ike_versions                      = ["ikev2"]
+  tunnel2_ike_versions                      = ["ikev2"]
 
   vpc_subnet_route_table_count = 4
   vpc_subnet_route_table_ids   = module.vpc_prod.private_route_table_ids
